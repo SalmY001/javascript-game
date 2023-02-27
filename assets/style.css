@@ -28,6 +28,7 @@ h3 {
     margin-right: 10px;
     margin-bottom: 20px;
     background: white;
+    padding: 5px;
 }
 
 .container {
@@ -150,4 +151,8 @@ input::placeholder {
     background: white;
     border-radius: 10px;
     justify-content: space-between; 
+}
+
+section {
+    width: 30%;
 }

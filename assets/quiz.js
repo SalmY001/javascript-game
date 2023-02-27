@@ -9,6 +9,8 @@ let answerOptions = true //acceptingAnswers
 let score = 0
 let questionCounter = 0
 let availableQ = [] //availableQuestions
+let remainingTime = document.querySelector("#time-remaining")
+let secondsLeft = 30
 
 let questions = [
     {
@@ -54,13 +56,13 @@ let questions = [
 ]
 
 const MAX_POINTS = 20 // SCORE_POINTS
-const MAX_QUESTIONS = 5 // MAX_QUESTIONS
+const MAX_QUESTIONS = 5 
 
 startQuiz = () => { //startGame
     questionCounter = 0
     score = 0
     availableQ = [...questions] //avaialableQuestions
-    getNextQuestion() //getNewQuestion
+    getNextQuestion() //Iterate through the questions
 }
 
 getNextQuestion = () => {
@@ -80,7 +82,7 @@ getNextQuestion = () => {
 
     choices.forEach(choice => {
         const number = choice.dataset['number']
-        choice.innterText = currentQ['choice' + number]
+        choice.innterText = currentQ['choice-text' + number]
     })
 
     availableQ.splice(questionsIndex, 1)
@@ -98,8 +100,14 @@ choices.forEach(choice => {
 
         let appliedClass = selectedAnswer == currentQ.answer ? 'correct' : 'incorrect'
 
-        if(appliedClass === 'correct') {
+        if(appliedClass === 'correct') { // add points to score
             incrementScore(MAX_POINTS)
+        }
+
+        if(appliedClass === 'incorrect') { // deduct five seconds from time
+            remainingTime.value = secondsLeft
+            secondsLeft -=5
+            if (secondsLeft <=0) clearInterval(timer)
         }
 
         selectedChoice.parentElement.classList.add(appliedClass)
@@ -117,4 +125,13 @@ incrementScore = num => {
     scoreText.innerText = score
 }
 
+    
+const timer = setInterval(() => { //start timer countdown
+    if (secondsLeft <=0) clearInterval(timer)
+    remainingTime.value = secondsLeft
+    remainingTime.textContent = secondsLeft
+    secondsLeft -= 1
+    }, 1000
+)
+     
 startQuiz()

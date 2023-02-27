@@ -63,6 +63,14 @@
     width: 0%;
 }
 
+.timer {
+    height: 50px;
+    padding: 10px;
+    background: #737476;
+    color: #fff;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .choice-container {
         min-width: 40rem;
