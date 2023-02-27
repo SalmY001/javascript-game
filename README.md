@@ -14,13 +14,13 @@ None
 
 ## Usage
 An example image of the quiz is displayed in the assets folder.
-Here is the link to the deployed application 
-![alt text](https://github.com/[SALMY001]/javascript-game/blob/[main]/QuizSS.jpg
 
 ## Credits
 Content viewed that helped with the project include: 
 
-Create a Quiz App with Timer using HTML CSS & JavaScript (CodingNepal) https://www.youtube.com/watch?v=pQr4O1OITJo
+How to Make a Quiz App using HTML CSS Javascript - Vanilla Javascript Project for Beginners Tutorial (Brian Design)
+
+https://www.youtube.com/watch?v=f4fB9Xg2JEY
 
 ## License
 Please refer to the LICENSE in the repo.
