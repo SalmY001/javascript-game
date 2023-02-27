@@ -82,7 +82,7 @@ getNextQuestion = () => {
 
     choices.forEach(choice => {
         const number = choice.dataset['number']
-        choice.innterText = currentQ['choice-text' + number]
+        choice.innerText = currentQ['choice-text' + number]
     })
 
     availableQ.splice(questionsIndex, 1)
